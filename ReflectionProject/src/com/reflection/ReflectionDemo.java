@@ -114,6 +114,12 @@ public class ReflectionDemo {
 			System.out.println("Method Name: " + privateGetNameMethod.getName());
 			String returnValue = (String) privateGetNameMethod.invoke(student, null);
 			
+			System.out.println("\nInvoke Public Method");
+			Method publicMethod = classObj.getDeclaredMethod("getFirstName", null);
+			System.out.println("Method Name: "+ publicMethod.getName());
+			String firstName = (String) publicMethod.invoke(student, null);
+			System.out.println("First Name: "+ firstName);
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
